@@ -1,9 +1,10 @@
 import { useState, useRef } from 'react'
 import axios from 'axios'
 import './App.css'
+import WeatherInformations from './components/WeatherInformations/WeatherInformations'
 
 function App() {
-  const [weather, setWeather] = useState({})
+  const [weather, setWeather] = useState()
   const inputRef = useRef()
 
   async function searchCity(){
@@ -18,9 +19,11 @@ function App() {
 
   return (
     <div>
-      <h1>Tiago PdaS</h1>
+      <h1>Tiago PdaS Weather</h1>
       <input ref={inputRef} type="text" placeholder='Digite a Cidade' />
       <button onClick={searchCity}>Buscar</button>
+
+      {weather && <WeatherInformations weather={weather}/>}
     </div>
   )
 }
