@@ -18,7 +18,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='container'>
       <h1>Tiago PdaS Weather</h1>
       <input ref={inputRef} type="text" placeholder='Digite a Cidade' />
       <button onClick={searchCity}>Buscar</button>
